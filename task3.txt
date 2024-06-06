@@ -1,0 +1,49 @@
+// Differences between operators spread and rest, examples of their use
+
+Оператор Spread (...)
+Оператор spread використовується для розпаковування елементів масиву або об'єкта.
+
+Приклади використання:
+Розпаковування масиву:
+
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const combinedArray = [...array1, ...array2];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+
+Копіювання об'єкта:
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };
+console.log(obj2); // { a: 1, b: 2, c: 3 }
+
+Виклик функції з масиву аргументів:
+
+const args = [1, 2, 3];
+function sum(a, b, c) {
+  return a + b + c;
+}
+console.log(sum(...args)); // 6
+
+Оператор Rest (...)
+Оператор rest використовується для збирання залишкових елементів у масив.
+
+Приклади використання:
+Функція з невизначеною кількістю аргументів:
+
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+
+Деструктуризація масиву:
+
+const [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // 1
+console.log(rest);  // [2, 3, 4]
+
+Отже відмінності:
+Spread: розпаковує елементи масиву або об'єкта.
+Rest: збирає залишкові елементи в масив або об'єкт.
+Spread використовується при виклику функцій, створенні масивів і об'єктів.
+Rest використовується у параметрах функцій і деструктуризації.
